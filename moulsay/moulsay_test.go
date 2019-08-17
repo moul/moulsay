@@ -1,10 +1,9 @@
-package main
+package moulsay
 
-import "os"
+import "fmt"
 
-func Example() {
-	os.Args = []string{"moulsay", "hello", "world!"}
-	main()
+func ExampleSay() {
+	fmt.Println(Say("hello world!", 72))
 	// Output:
 	//       ++
 	//       ++++
