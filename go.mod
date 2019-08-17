@@ -1,3 +1,3 @@
-module moul.io/golang-repo-template
+module moul.io/moulsay
 
 go 1.12
