@@ -7,10 +7,13 @@ import (
 	"github.com/eidolon/wordwrap"
 )
 
-func Say(message string, totalMaxWidth int) string {
+func Say(message string, totalMaxWidth int) (string, error) {
 	art := bodyLinesWithPadding()
 	art = trimEmptyLines(art)
 	artWidth := len(art[0])
+	if minWidth := artWidth + 2; totalMaxWidth < minWidth {
+		return "", fmt.Errorf("--max-width should be at least %d", minWidth)
+	}
 	maxTextWidth := totalMaxWidth - artWidth - 1
 	message = wordwrap.Wrapper(maxTextWidth, true)(message)
 	message = justifyCenter(message, maxTextWidth)
@@ -35,5 +38,5 @@ func Say(message string, totalMaxWidth int) string {
 	for i := 0; i < len(art); i++ {
 		lines[i] = strings.TrimRight(fmt.Sprintf("%s %s", art[i], messageLines[i]), " ")
 	}
-	return strings.Join(lines, "\n")
+	return strings.Join(lines, "\n"), nil
 }

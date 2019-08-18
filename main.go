@@ -2,6 +2,7 @@ package main // import "moul.io/moulsay"
 
 import (
 	"fmt"
+	"io/ioutil"
 	"log"
 	"os"
 	"strings"
@@ -24,6 +25,18 @@ func main() {
 }
 
 func run(c *cli.Context) error {
-	fmt.Println(moulsay.Say(strings.Join(c.Args().Slice(), " "), c.Int("max-width")))
+	message := strings.Join(c.Args().Slice(), " ")
+	if message == "" {
+		in, err := ioutil.ReadAll(os.Stdin)
+		if err != nil {
+			return err
+		}
+		message = string(in)
+	}
+	out, err := moulsay.Say(message, c.Int("max-width"))
+	if err != nil {
+		return err
+	}
+	fmt.Println(out)
 	return nil
 }
