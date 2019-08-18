@@ -1,4 +1,6 @@
 github.com/eidolon/wordwrap v0.0.0-20161011182207-e0f54129b8bb h1:ioQwBmKdOCpMVS/bDaESqNWXIE/aw4+gsVtysCGMWZ4=
 github.com/eidolon/wordwrap v0.0.0-20161011182207-e0f54129b8bb/go.mod h1:ZAPs+OyRzeVJFGvXVDVffgCzQfjg3qU9Ig8G/MU3zZ4=
+gopkg.in/urfave/cli.v2 v2.0.0-20190806201727-b62605953717 h1:OvXt/p4cdwNl+mwcWMq/AxaKFkhdxcjx+tx+qf4EOvY=
+gopkg.in/urfave/cli.v2 v2.0.0-20190806201727-b62605953717/go.mod h1:cKXr3E0k4aosgycml1b5z33BVV6hai1Kh7uDgFOkbcs=
 moul.io/asciimoul v1.1.0 h1:eYfYiXljSe8Z6VO84N7x8rtZE1kTLK/HmU5q9eC+T+w=
 moul.io/asciimoul v1.1.0/go.mod h1:uyy5fnzliF2LQ+z7+tHZTnWzaajv8g6ZyLbBoNdDiko=
