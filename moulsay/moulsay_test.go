@@ -3,7 +3,8 @@ package moulsay
 import "fmt"
 
 func ExampleSay() {
-	fmt.Println(Say("hello world!", 72))
+	out, _ := Say("hello world!", 72)
+	fmt.Println(out)
 	// Output:
 	//       ++
 	//       ++++
