@@ -1,31 +1,44 @@
 package main // import "moul.io/moulsay"
 
 import (
+	"context"
+	"flag"
 	"fmt"
 	"io/ioutil"
 	"log"
 	"os"
 	"strings"
 
-	cli "gopkg.in/urfave/cli.v2"
+	"github.com/peterbourgon/ff/v3/ffcli"
 	"moul.io/moulsay/moulsay"
 )
 
 func main() {
-	app := cli.App{
-		Flags: []cli.Flag{
-			&cli.IntFlag{Name: "max-width", Aliases: []string{"w"}, Value: 72},
+	fs := flag.NewFlagSet("app", flag.ExitOnError)
+	maxWidth := fs.Int("max-width", 72, "set max width")
+
+	root := &ffcli.Command{
+		Name:       "moul say",
+		ShortUsage: "moulsay + word",
+		ShortHelp:  "moulsay word",
+		LongHelp:   "moulsay -max-width=? word for different max width from moul to word (minimum max-width = 27)",
+		FlagSet:    fs,
+		Exec: func(ctx context.Context, args []string) error {
+			err := run(ctx, args, *maxWidth)
+			if err != nil {
+				return err
+			}
+			return nil
 		},
-		Action: run,
 	}
-	if err := app.Run(os.Args); err != nil {
-		log.Printf("error: %v\n", err)
-		os.Exit(1)
+
+	if err := root.ParseAndRun(context.Background(), os.Args[1:]); err != nil {
+		log.Fatal(err)
 	}
 }
 
-func run(c *cli.Context) error {
-	message := strings.Join(c.Args().Slice(), " ")
+func run(c context.Context, args []string, maxWidth int) error {
+	message := strings.Join(args, " ")
 	if message == "" {
 		in, err := ioutil.ReadAll(os.Stdin)
 		if err != nil {
@@ -33,7 +46,7 @@ func run(c *cli.Context) error {
 		}
 		message = string(in)
 	}
-	out, err := moulsay.Say(message, c.Int("max-width"))
+	out, err := moulsay.Say(message, maxWidth)
 	if err != nil {
 		return err
 	}
