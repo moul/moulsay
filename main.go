@@ -21,8 +21,8 @@ func main() {
 
 	root := &ffcli.Command{
 		Name:       "moul say",
-		ShortUsage: "moulsay + word",
-		ShortHelp:  "moulsay word",
+		ShortUsage: "moulsay [OPTS] words...",
+		ShortHelp:  "moulsay -h",
 		FlagSet:    fs,
 		Exec: func(ctx context.Context, args []string) error {
 			return run(ctx, args, *maxWidth)
