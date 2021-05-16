@@ -47,7 +47,7 @@ jobs:
     strategy:
       matrix:
         golang:
-          - 1.12.x
+          - 1.16.x
     env:
       OS: ubuntu-latest
       GOLANG: ${{ matrix.golang }}
