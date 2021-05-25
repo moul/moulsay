@@ -56,12 +56,6 @@ $ brew install moul/moul/moulsay
 
 https://github.com/moul/moulsay/releases
 
-## Contributors ✨
-
-Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
-
-This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
-
 ## License
 
 © 2019-2020 [Manfred Touron](https://manfred.life)
