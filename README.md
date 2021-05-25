@@ -2,7 +2,6 @@
 
 :smile: moulsay
 
-[![CircleCI](https://circleci.com/gh/moul/moulsay.svg?style=shield)](https://circleci.com/gh/moul/moulsay)
 [![GoDoc](https://godoc.org/moul.io/moulsay?status.svg)](https://godoc.org/moul.io/moulsay)
 [![License](https://img.shields.io/badge/license-Apache--2.0%20%2F%20MIT-%2397ca00.svg)](https://github.com/moul/golang-repo-template/blob/master/COPYRIGHT)
 [![GitHub release](https://img.shields.io/github/release/moul/moulsay.svg)](https://github.com/moul/moulsay/releases)
