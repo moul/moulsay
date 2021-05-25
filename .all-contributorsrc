@@ -26,10 +26,19 @@
       "contributions": [
         "maintenance"
       ]
+    },
+    {
+      "login": "Dzalevski",
+      "name": "Darko Djalevski",
+      "avatar_url": "https://avatars.githubusercontent.com/u/9572827?v=4",
+      "profile": "https://darkodjalevski.me/",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
-  "projectName": "golang-repo-template",
+  "projectName": "moulsay",
   "projectOwner": "moul",
   "repoType": "github",
   "repoHost": "https://github.com",
